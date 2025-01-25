@@ -12,10 +12,11 @@ export const TabNavigator = () => {
           key={tab.id}
           name={tab.name}
           component={tab.component}
-          options={({ route }) => ({
+          options={() => ({
             tabBarIcon: ({ color, size }) => (
               <Icon source={tab.icon} color={color} size={size} />
             ),
+            headerShown: false,
           })}
         />
       ))}

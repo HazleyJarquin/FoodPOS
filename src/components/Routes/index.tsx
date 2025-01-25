@@ -6,6 +6,7 @@ import { TRootStackParamList } from "../../types/TRootStackParamList";
 import { LoginScreen } from "../../screens/Login";
 
 import { TabNavigator } from "../TabNavigator";
+import { SelectTypeLoginScreen } from "../../screens/SelectTypeLogin";
 
 enableScreens();
 
@@ -22,8 +23,30 @@ export const Routes = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="SelectTypeLogin"
+          component={SelectTypeLoginScreen}
+          options={{
+            headerShown: true,
+            headerBackButtonDisplayMode: "minimal",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerTintColor: "#1A72DD",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              fontSize: 20,
+            },
+            headerTitle: "Inicio de sesión",
+            headerShadowVisible: false,
+          }}
+        />
 
-        <Stack.Screen name="HomeTabs" component={TabNavigator} />
+        <Stack.Screen
+          name="HomeTabs"
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

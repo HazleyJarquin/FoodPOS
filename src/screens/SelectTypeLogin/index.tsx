@@ -4,8 +4,17 @@ import { Button, Text } from "react-native-paper";
 import { commonStyles } from "../../styles/commonStyles";
 import { posData } from "../../data/PosData";
 import { buttonStyles } from "../../styles/buttonStyles";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { TRootStackParamList } from "../../types/TRootStackParamList";
+import { useNavigation } from "@react-navigation/native";
+
+type SelectTypeLoginScreenNavigationProp = NativeStackNavigationProp<
+  TRootStackParamList,
+  "SelectTypeLogin"
+>;
 
 export const SelectTypeLoginScreen = () => {
+  const navigation = useNavigation<SelectTypeLoginScreenNavigationProp>();
   return (
     <View style={styles.container}>
       <View style={{ width: "100%" }}>
@@ -22,7 +31,9 @@ export const SelectTypeLoginScreen = () => {
         <Button
           icon="account"
           style={[buttonStyles.primary, { width: "100%" }]}
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate("AdminLogin");
+          }}
           labelStyle={buttonStyles.textPrimary}
         >
           Propietario
@@ -34,7 +45,9 @@ export const SelectTypeLoginScreen = () => {
             buttonStyles.primary,
             { width: "100%", justifyContent: "space-between" },
           ]}
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate("EmployeeLogin");
+          }}
           labelStyle={buttonStyles.textPrimary}
         >
           Empleado

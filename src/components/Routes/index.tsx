@@ -7,6 +7,9 @@ import { LoginScreen } from "../../screens/Login";
 
 import { TabNavigator } from "../TabNavigator";
 import { SelectTypeLoginScreen } from "../../screens/SelectTypeLogin";
+import { AdminLoginScreen } from "../../screens/AdminLogin";
+import { EmployeeLoginScreen } from "../../screens/EmployeeLogin";
+import { PaymentScreen } from "../../screens/Payment";
 
 enableScreens();
 
@@ -38,6 +41,42 @@ export const Routes = () => {
               fontSize: 20,
             },
             headerTitle: "Inicio de sesión",
+            headerShadowVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="AdminLogin"
+          component={AdminLoginScreen}
+          options={{
+            headerShown: true,
+            headerBackButtonDisplayMode: "minimal",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerTintColor: "#1A72DD",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              fontSize: 20,
+            },
+            headerTitle: "Iniciar sesión como Propietario",
+            headerShadowVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="EmployeeLogin"
+          component={EmployeeLoginScreen}
+          options={{
+            headerShown: true,
+            headerBackButtonDisplayMode: "minimal",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerTintColor: "#1A72DD",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              fontSize: 20,
+            },
+            headerTitle: "Iniciar sesión como Trabajador",
             headerShadowVisible: false,
           }}
         />

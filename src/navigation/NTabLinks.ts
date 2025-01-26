@@ -1,4 +1,5 @@
 import { HomeScreen } from "../screens/Home";
+import { PaymentScreen } from "../screens/Payment";
 import { ProductsScreen } from "../screens/Products";
 
 export const NTabLinks = [
@@ -10,8 +11,14 @@ export const NTabLinks = [
   },
   {
     id: 2,
-    name: "Productos",
-    icon: "basket-outline",
+    name: "Inventario",
+    icon: "book-edit-outline",
     component: ProductsScreen,
+  },
+  {
+    id: 3,
+    name: "Facturar",
+    icon: "wallet-outline",
+    component: PaymentScreen,
   },
 ];

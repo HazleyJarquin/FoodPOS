@@ -6,7 +6,16 @@ export const TabNavigator = () => {
   const Tab = createBottomTabNavigator();
 
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          paddingBottom: 10,
+          paddingTop: 5,
+          height: 60,
+        },
+      }}
+    >
       {NTabLinks.map((tab) => (
         <Tab.Screen
           key={tab.id}
